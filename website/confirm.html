@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Confirmation - Agrimate India</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+    .box {
+      max-width: 600px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #28a745;
+    }
+    .info p {
+      margin: 8px 0;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li {
+      margin: 5px 0;
+      padding: 5px;
+      border-bottom: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>✅ Order Confirmed!</h2>
+    <div id="details"></div>
+  </div>
+
+  <script>
+    const order = JSON.parse(localStorage.getItem("lastOrder"));
+
+    if (order) {
+      const user = order.user;
+      const cart = order.cart;
+
+      let total = 0;
+      let html = `
+        <div class="info">
+          <p><strong>Name:</strong> ${user.name}</p>
+          <p><strong>Address:</strong> ${user.address}</p>
+          <p><strong>Phone:</strong> ${user.phone}</p>
+          <p><strong>Email:</strong> ${user.email}</p>
+          <p><strong>Pincode:</strong> ${user.pincode}</p>
+        </div>
+        <h3>🛍️ Ordered Items:</h3>
+        <ul>
+      `;
+
+      cart.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        html += `<li>${item.name} — ₹${item.price} × ${item.quantity} = ₹${subtotal}</li>`;
+      });
+
+      html += `</ul><p><strong>Total:</strong> ₹${total}</p>`;
+      document.getElementById("details").innerHTML = html;
+    } else {
+      document.getElementById("details").innerHTML = "<p>No order found.</p>";
+    }
+  </script>
+</body>
+</html>

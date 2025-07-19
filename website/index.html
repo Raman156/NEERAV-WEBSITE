@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agrimate india</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><img src="images/logo.png" alt="Agrimate india"></div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="shopping.html">Shopping</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="brand-name">Agrimate</h1>
+      <h1 class="brand-name highlight">India</h1>
+      <p class="description">
+        At Agrimate India, we bring you the taste of tradition and purity. Our range of organic and traditional products
+        includes delicious laddoos, golden turmeric, homemade pickles, and more – all crafted with love and care.
+      </p>
+    </div>
+  </section>
+   <section class="products-section">
+    <div class="container">
+      <h2 class="section-title">Sweets </h2>
+      <div id="product-container" class="products-grid"></div>
+    </div>
+  </section>
+  <section class="products-section">
+  <div class="container">
+    <h2 class="section-title">Pickles</h2>
+    <div id="pickles-container" class="products-grid"></div>
+  </div>
+</section>
+<section class="products-section">
+  <div class="container">
+    <h2 class="section-title">Chocolates</h2>
+    <div id="chocolates-container" class="products-grid"></div>
+  </div>
+</section>
+
+
+  
+
+  <!-- Modal -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="main-image-container">
+        <img id="modalImage" src="" alt="Product">
+      </div>
+      <div class="thumbnail-container" id="thumbnails"></div>
+      <h2 id="modalTitle"></h2>
+      <p id="modalPrice"></p>
+      <p id="modalQuantity"></p>
+
+
+      <div class="quantity-selector">
+        <button onclick="changeQuantity(-1)">−</button>
+        <input type="number" id="quantity" value="1" min="1">
+        <button onclick="changeQuantity(1)">+</button>
+      </div>
+      <button class="add-cart" onclick="addToCart()">Add to Cart</button>
+    </div>
+  </div>
+
+      <div class="more-btn-container">
+        <a href="shopping.html" class="more-btn">More Products</a>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="contact-container">
+      <div class="contact-left">
+        <h3>Our Address</h3>
+        <p>South West Delhi,<br> New Delhi, 110037 ,India</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/agrimate_india/?utm_source=ig_web_button_share_sheet"
+            target="_blank">Instagram</a>
+          <a href="https://www.linkedin.com/in/agrimate-india-2679a1368?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <h3>Contact Us</h3>
+        <p><strong>Mobile:</strong> +91 9718962260</p>
+        <p><strong>Email:</strong> agrimateindiaa@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

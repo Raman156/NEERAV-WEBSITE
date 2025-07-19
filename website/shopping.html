@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop - Agrimate India</title>
+  <link rel="stylesheet" href="shopping.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo"><img src="logon.png" alt="Agrimate India"></div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shopping.html">Shopping</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+  </nav>
+
+  <h1 class="page-title">Our Products</h1>
+  <div class="product-container" id="product-container"></div>
+
+  <!-- Product Modal -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="main-image-container">
+        <img id="modalImage" src="" alt="Product">
+      </div>
+      <div class="thumbnail-container" id="thumbnails"></div>
+      <h2 id="modalTitle"></h2>
+      <p id="modalPrice"></p>
+      <div class="quantity-selector">
+        <button onclick="changeQuantity(-1)">−</button>
+        <input type="number" id="quantity" value="1" min="1">
+        <button onclick="changeQuantity(1)">+</button>
+      </div>
+      <button class="add-cart" onclick="addToCart()">Add to Cart</button>
+    </div>
+  </div>
+
+  <script src="shopping.js"></script>
+</body>
+</html>

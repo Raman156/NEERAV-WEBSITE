@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout - Agrimate India</title>
+  <link rel="stylesheet" href="checkout.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+  <div class="checkout-form">
+    <h1>Checkout</h1>
+    <form id="checkout-form">
+      <label>Name: <input type="text" name="name" required></label><br>
+      <label>Address: <input type="text" name="address" required></label><br>
+      <label>Phone: <input type="tel" name="phone" required></label><br>
+      <label>Email: <input type="email" name="email" required></label><br>
+      <label>Pincode: <input type="text" name="pincode" required></label><br>
+
+      <h3>Select Payment Method:</h3>
+      <label><input type="radio" name="payment" value="Cash on Delivery" required> Cash on Delivery</label><br>
+      <label><input type="radio" name="payment" value="UPI" required> UPI</label><br>
+      <label><input type="radio" name="payment" value="Credit/Debit Card" required> Credit/Debit Card</label><br>
+      <label><input type="radio" name="payment" value="Online (Razorpay)" required checked> Online (Razorpay)</label><br><br>
+
+     <!-- Keep your HTML as-is -->
+<button type="button" onclick="payWithRazorpay()" class="pay-button">Pay</button>
+
+    </form>
+  </div>
+
+  <script src="checkout.js"></script>
+</body>
+</html>
